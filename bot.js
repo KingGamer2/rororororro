@@ -1191,7 +1191,7 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل بنجاح",
         footer: {
-          text: "{King_Bot}."
+          text: "{, R o y a l e }."
         }
       }}).then(msg => {msg.delete(3000)});
                           }
@@ -1847,7 +1847,7 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('KinG Bot ♧' ,
+ .addField(', R o y a l e  ♧' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
@@ -1908,7 +1908,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('KinGBoT' ,
+ .addField(', R o y a l e ' ,
   `${Love[Math.floor(Math.random() * Love.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
@@ -1947,7 +1947,7 @@ client.on('message', message => { //bot
                                     .setAuthor(client.user.username,client.user.avatarURL)
                                     .setThumbnail(client.user.avatarURL)
                                     .setColor('RANDOM')
-                                    .setTitle('``هيرو ميوزك`` ')
+                                    .setTitle('``, R o y a l e `` ')
                                     .addField('``البنق🚀``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
                                     .addField('``استخدام الذاكرة ``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
                                     .addField('``السيرفرات🌐``', [client.guilds.size], true)
@@ -2018,7 +2018,7 @@ client.on('message', message => {
   .setThumbnail(message.author.avatarURL)  
   .setAuthor(message.author.username)
 .setDescription("معلومات عن الحــساب")
-               .setFooter(`{King_Bot}.`, '')
+               .setFooter(`{, R o y a l e }.`, '')
   .setColor("#9B59B6")
   .addField("اســـم الحســاب", `${message.author.username}`)
   .addField('كود الحساب الخاص', message.author.discriminator)
@@ -2573,28 +2573,36 @@ Sender <@${message.author.id}>                                                  
 });
 
 
-client.on('message', msg => {
-  if (msg.content === 'discord.gg') {
-   msg.delete(30)
- 
-  }
-})
+client.on('message', message => {
+    if(message.content.includes('discord.gg')){
+                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
+    }
+}
+});
 
-client.on('message', msg => {
-  if (msg.content === 'https://') {
-   msg.delete(30)
- 
-  }
-})
+client.on('message', message => {
+    if(message.content.includes('https://')){
+                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
+    }
+}
+});
 
 
-
-client.on('message', msg => {
-  if (msg.content === 'http://') {
-   msg.delete(30)
- 
-  }
-})
+client.on('message', message => {
+    if(message.content.includes('http://')){
+                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
+    }
+}
+});
 
 
 
