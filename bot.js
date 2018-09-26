@@ -10,7 +10,7 @@ const queue = new Map();
 const ytdl = require('ytdl-core');
 const fs = require('fs');
 const gif = require("gif-search");
-const prefix = "!";
+const prefix = "?";
 const adminprefix = "-"
 /////////////////////////
 ////////////////////////
@@ -2559,39 +2559,28 @@ Sender <@${message.author.id}>                                                  
 });
 
 
-client.on('message', message => {
-    if(message.content.includes('discord.gg')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
-client.on('message', message => {
-    if(message.content.includes('https://')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
-client.on('message', message => {
-    if(message.content.includes('http://')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
+client.on('message', msg => {
+  if (msg.content === 'discord.gg') {
+   msg.delete(30)
+ 
+  }
+})
+
+client.on('message', msg => {
+  if (msg.content === 'https://') {
+   msg.delete(30)
+ 
+  }
+})
 
 
 
-
-
-
+client.on('message', msg => {
+  if (msg.content === 'http://') {
+   msg.delete(30)
+ 
+  }
+})
 
 
 
@@ -2602,7 +2591,7 @@ client.on('message', message => {
 
 
 client.on('message', function(message) {
-	const myID = "488314640582049793";
+	const myID = "417377495160193044";
     let args = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(adminprefix + "setname")) {
 		        if(message.author.id !== myID) return;
@@ -2771,38 +2760,7 @@ if (err) console.error(err);
 
 
 
-client.on('message', message => {
-    if(message.content.includes('http://')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
 
-
-client.on('message', message => {
-    if(message.content.includes('htpps://')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
-
-
-
-client.on('message', message => {
-    if(message.content.includes('discord.gg')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
 
 
 
@@ -2815,7 +2773,7 @@ client.on('message', message => {
 
   client.on('message',async message => {
     if(message.content.startsWith(adminprefix + "restart")) {
-        if(message.author.id !== "488314640582049793") return message.reply('You aren\'t the bot owner.');
+        if(message.author.id !== "417377495160193044") return message.reply('You aren\'t the bot owner.');
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
                msg.edit('**Restarting..**');
