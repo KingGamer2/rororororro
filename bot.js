@@ -2857,7 +2857,7 @@ var warn = message.guild.roles.find("name", "warn");
   message.reply(`**تم اعطائك تحذير لانك تقول كلام غير ملائم😠**`) 
   }
   
-  if(message.member.roles.has(warn.id)) {
+  if(message.member.roles.has(warn)) {
       message.member.addRole(mute)
       message.member.removeRole(warn)
       let mutetime = "30m";
