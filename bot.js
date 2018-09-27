@@ -333,7 +333,13 @@ ${prefix}say - يقول البوت التقوله ويحذف رسالتك
 ?لعبة خواطر - خواطر
 ?لعبة  حب - حب
 **
-   
+   `,`
+        ***__معلومات مهمة__***
+**  
+log - علشان اللوقlog ساوي روم اسمها 
+welcome - علشان الولكم welcome  ساوي روم اسمها 
+suggestions -علشان الاقتراحات suggestions ساوي روم اسمها 
+  
 `]
     let page = 1;
 
@@ -2813,6 +2819,63 @@ client.login(process.env.BOT_TOKEN);
         },3000);
 		}
 });
+
+
+
+
+
+
+
+
+
+=
+const alphacodes = [
+    "كلب",
+    "حيوان",
+    "كل زق",
+    "عير في امك",
+    "عير فمك",
+	"انيك امه",
+	"انيك اختك",
+	"انيك اخته",
+	"الحس طيزي",
+	"عير فختك",
+	"عير في اختك",
+	"كل خرا انت",
+	"كل خرا",
+    "انيك امك"
+
+]
+client.on('message', message => {
+var mute = message.guild.roles.find("name", "Muted");
+var warn = message.guild.roles.find("name", "warn");
+  if(alphacodes.some(word => message.content.includes(word))) {
+  if (message.author.bot) return;
+  
+  if(message.member.roles.has()) return;
+  if(!message.member.roles.has()) {
+  message.member.addRole(warn)
+  message.reply(`**تم اعطائك تحذير لانك تقول كلام غير ملائم😠**`) 
+  }
+  
+  if(message.member.roles.has(warn.id)) {
+      message.member.addRole(mute)
+      message.member.removeRole(warn)
+      let mutetime = "30m";
+    
+    message.reply(`**تم اعطائك ميوت كتابي لمدة 30 دقائق 🤐**!`);
+  
+      setTimeout(function(){
+      message.member.removeRole(mute)
+      message.reply(`تم الغاء الميوت عنك!`)
+    }, ms(mutetime))    
+     
+  }
+  
+  }
+  })
+
+
 
 
 client.login(process.env.BOT_TOKEN);
