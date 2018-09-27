@@ -339,7 +339,8 @@ ${prefix}say - يقول البوت التقوله ويحذف رسالتك
 log - علشان اللوقlog ساوي روم اسمها 
 welcome - علشان الولكم welcome  ساوي روم اسمها 
 suggestions -علشان الاقتراحات suggestions ساوي روم اسمها 
-  
+**
+
 `]
     let page = 1;
 
