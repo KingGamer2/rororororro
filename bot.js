@@ -2828,7 +2828,6 @@ client.login(process.env.BOT_TOKEN);
 
 
 
-=
 const alphacodes = [
     "كلب",
     "حيوان",
