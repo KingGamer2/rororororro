@@ -2846,29 +2846,19 @@ const alphacodes = [
 
 ]
 client.on('message', message => {
-var mute = message.guild.roles.find("name", "Muted");
-var warn = message.guild.roles.find("name", "warn");
+var Muted = message.guild.roles.find("name", "Muted");
   if(alphacodes.some(word => message.content.includes(word))) {
   if (message.author.bot) return;
   
   if(message.member.roles.has()) return;
   if(!message.member.roles.has()) {
-  message.member.addRole(warn)
-  message.reply(`**تم اعطائك تحذير لانك تقول كلام غير ملائم😠**`) 
-  }
-  
-  if(message.member.roles.has(warn)) {
-      message.member.addRole(mute)
-      message.member.removeRole(warn)
-      let mutetime = "30m";
-    
-    message.reply(`**تم اعطائك ميوت كتابي لمدة 30 دقائق 🤐**!`);
-  
-      setTimeout(function(){
+  message.member.addRole(Muted)
+  let mutetime = "30m";
+  message.reply(`**تم اعطائك ميوت كتابي لمدة 30 دقائق 🤐**!`);
+        setTimeout(function(){
       message.member.removeRole(mute)
       message.reply(`تم الغاء الميوت عنك!`)
-    }, ms(mutetime))    
-     
+    }, ms(mutetime)) 
   }
   
   }
