@@ -2829,40 +2829,89 @@ client.login(process.env.BOT_TOKEN);
 
 
 
-const alphacodes = [
-    "كلب",
-    "حيوان",
-    "كل زق",
-    "عير في امك",
-    "عير فمك",
-	"انيك امه",
-	"انيك اختك",
-	"انيك اخته",
-	"الحس طيزي",
-	"عير فختك",
-	"عير في اختك",
-	"كل خرا انت",
-	"كل خرا",
-    "انيك امك"
+client.on('message', msg => {
+  if (msg.content === 'كسمك') {
+   msg.delete(30)
+  }
+});
 
-]
-client.on('message', message => {
-  if(alphacodes.some(word => message.content.includes(word))) {
-  if (message.author.bot) return;
-  
-  if(message.member.roles.has()) return;
-  if(!message.member.roles.has()) {
-  message.member.addRole(Muted)
-  let mutetime = "30m";
-  message.reply(`**تم اعطائك ميوت كتابي لمدة 30 دقائق 🤐**!`);
-        setTimeout(function(){
-      message.member.removeRole(mute)
-      message.reply(`تم الغاء الميوت عنك!`)
-    }, ms(mutetime)) 
+client.on('message', msg => {
+  if (msg.content === 'زب') {
+   msg.delete(30)
   }
-  
+});
+
+client.on('message', msg => {
+  if (msg.content === 'زبي') {
+   msg.delete(30)
+ 
   }
-  })
+});
+
+client.on('message', msg => {
+  if (msg.content === 'كس') {
+   msg.delete(30)
+ 
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'fuck') {
+   msg.delete(30)
+ 
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'اير') {
+   msg.delete(30)
+ 
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'anal') {
+   msg.delete(30)
+ 
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'pussy') {
+   msg.delete(30)
+ 
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'cock') {
+   msg.delete(30)
+ 
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'نيك') {
+   msg.delete(30)
+ 
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'قحبة') {
+   msg.delete(30)
+ 
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'عير في اختك') {
+   msg.delete(30)
+ 
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'عير') {
+   msg.delete(30)
+ 
+  }
+});
 
 
 
