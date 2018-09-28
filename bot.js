@@ -394,7 +394,7 @@ client.on('message', message => {
 });
 
    client.on('message', message => {
-	   if(message.content.startsWith(`${prefix}invite`)){
+	   if(message.content.startsWith(`${prefix}inv`)){
 		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
 		   var embed = new Discord.RichEmbed()
 		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
