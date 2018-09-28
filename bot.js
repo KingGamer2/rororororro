@@ -15,6 +15,41 @@ const adminprefix = "-"
 /////////////////////////
 ////////////////////////
 //////////////////////
+
+client.on('ready', function(){    
+    var ms = 150000 ;    // السرعة لا  تغيرها عشان ما تتبند 
+    var setGame = [`المستخدمين : ${client.users.size}`,`االسيرفرات : ${client.guilds.size}`,`${prefix}help | ${prefix}inv`];    // لا تلعب بشيء
+    var i = -1;    
+    var j = 0;    
+    setInterval(function (){    
+        if( i == -1 ){    
+j = 1;    
+       }    
+        if( i == (setGame.length)-1 ){    
+            j = -1;    
+      }    
+       i = i+j;    
+        client.user.setGame(setGame[i],`http://www.youtube.com/kinggamer_th3`);    
+}, ms);    
+    
+});
+
+client.on('ready', () => {
+  console.log('╔[══════════════════════════════════]╗');
+  console.log('')
+  console.log('            ╔[════════════]╗')
+  console.log('              Bot Is Online')
+  console.log('            ╚[════════════]╝')
+  console.log('')
+  console.log(`Logged in as ${client.user.tag}!`);
+  console.log('')
+  console.log(`servers! [ " ${client.guilds.size} " ]`);
+  console.log('')
+  console.log(`Users! [ " ${client.users.size} " ]`);
+  console.log('')
+  console.log('╚[════════════════════════════════════]╝')
+});
+
 /////////////////////////
 ////////////////////////
 //////////////////////
