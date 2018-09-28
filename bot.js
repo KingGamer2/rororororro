@@ -18,7 +18,7 @@ const adminprefix = "-"
 
 client.on('ready', function(){    
     var ms = 150000 ;    // السرعة لا  تغيرها عشان ما تتبند 
-    var setGame = [`المستخدمين : ${client.users.size}`,`االسيرفرات : ${client.guilds.size}`,`${prefix}help | ${prefix}inv`];    // لا تلعب بشيء
+    var setGame = [`users : ${client.users.size}`,`servers : ${client.guilds.size}`,`${prefix}help | ${prefix}inv | ${prefix}support`];    // لا تلعب بشيء
     var i = -1;    
     var j = 0;    
     setInterval(function (){    
@@ -2650,7 +2650,26 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+  if (true) {
+if (message.content === (prefix + "support")) {
+     message.author.send('https://discord.gg/QGYuH9').catch(e => console.log(e.stack));
+    }
+   } 
+  });
+  
+client.on('message', message => {
+     if (message.content === (prefix + "support")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , " تــــم ارســالك في الخــاص")
 
+
+
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
