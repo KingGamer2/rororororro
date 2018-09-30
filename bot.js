@@ -389,11 +389,11 @@ ${prefix}say - يقول البوت التقوله ويحذف رسالتك
 ?لعبة  حب - حب
 **
    `,`
-        ***__أوامر الالوان__***
+        :balloon: أوامر الألوان :balloon:
 **
-$colors - لعرض قائمة الألوان
-$createcolors - لأنشاء 50 لون
-$setColor - لتحط ايا لون من هول الالوان اكتب الأمر و الرقم من 1 ل50 انت اختر
+?colors - لعرض قائمة الألوان
+?ccolors - لأنشاء 50 لون
+?setColor - لتحط ايا لون من هول الالوان اكتب الأمر و الرقم من 1 ل50 انت اختر
 **
 
 `]
@@ -531,7 +531,7 @@ Role : __${ar[message.guild.id].role}__`)
 
 
 client.on('message', message => {
-    if(message.content === prefix + 'createcolors') {
+    if(message.content === prefix + 'ccolors') {
                          if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
          if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**You Dont Have** `ADMINISTRATOR` **premission**').then(msg => msg.delete(6000))
       message.guild.createRole({
